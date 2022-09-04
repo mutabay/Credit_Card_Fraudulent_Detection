@@ -10,7 +10,7 @@ class Config(object):
 
     # This will create a file in <app> FOLDER
     #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite3')
-    SQLALCHEMY_DATABASE_URI = 'mysql://root:byrm2434@localhost:3306/db'
+    SQLALCHEMY_DATABASE_URI = 'mysql://root:{pass}@localhost:3306/db'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
