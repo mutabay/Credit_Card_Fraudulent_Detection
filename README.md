@@ -2,7 +2,6 @@
 
 <br>
 
-
 ### Mustafa Tayyip BAYRAM   
 ### Furkan ÖCALAN  
 
