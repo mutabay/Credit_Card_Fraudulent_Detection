@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h2 class="m-b-10">Analyze Results</h2>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- [ Main Content ] start -->
+                <div class="row">
+                    <!-- [ Bar Chart ] start -->
+                    <div class="col-md-12 col-xl-12">
+
+                        {% if (result == 0) %}
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3> <b style="color: #1c7430">Provided transaction is NOT a FRAUD transaction </b></h3>
+                                </div>
+                            </div>
+
+                        {% elif (result == 1) %}
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3><b style="color: #ff5252">!!!! Provided transaction is a FRAUD transaction !!!!</b></h3>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- [ Main Content ] end -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+
+{% block javascripts %}
+    <script src="../../static/file_operations/main.js"></script>
+    <script src="../../static/file_operations/import.js"></script>
+    <script src="../../static/file_operations/metadata.js"></script>
+{% endblock javascripts %}

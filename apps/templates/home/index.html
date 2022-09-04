@@ -1,0 +1,64 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="pcoded-content">
+
+    <div class="loading mt-5">
+    </div>
+    <div class="content">
+        <form action="/" method="POST" enctype = "multipart/form-data">
+        <div class="pcoded-inner-content upload-container image-upload">
+            <!-- [ breadcrumb ] start -->
+                <button type="button" class="btn btn-md w-100 h-100 p-3 upload-center">
+                    <label for="fileUpload">
+                        <i class="feather icon-plus-square main-upload-icon p-3"></i>
+                    </label>
+                    <input id="fileUpload" name="fileUpload" type="file"/>
+                    <br>
+                    <span class="button-text" style="color: #2d667b">Upload file for analyzing (<code style="color: #ff5252;"><b>.txt</b> </code>) </span>
+                    <br>
+                    <span class="button-text" style="color: #ff5252">File must contain 30 transactions with seperated 1 space (white line)</span>
+                </button>
+
+            <!-- [ breadcrumb ] end -->
+            </div>
+        <div class="container-fluid accordion" id="accordion">
+            <div class="card">
+                <div class="card-body collapse show">
+                    <button type="submit" onclick="loading();" class="btn btn-square btn-info proceed-btn-center p-3 mb-3" id="loadText">Continue</button>
+                    <br>
+                    <input type="file" class="form-control-file" name="fileUpload" id="fileUpload">
+                    <textarea class="form-control" name="textArea" id="textArea" rows="6" placeholder="Or alternatively, write the transactions with separating comma."></textarea>
+                    <br>
+                    <div class="loader" id="loaderOne"></div>
+                </div>
+            </div>
+
+        </div>
+
+        </form>
+    </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+
+{% block javascripts %}
+    <script src="../../static/file_operations/main.js"></script>
+    <script src="../../static/file_operations/import.js"></script>
+    <script src="../../static/file_operations/metadata.js"></script>
+    <script type="text/javascript">// <![CDATA[
+        function loading(){
+            $(".loading").show();
+            $(".content").hide();
+        }
+// ]]></script>
+{% endblock javascripts %}
