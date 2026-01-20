@@ -1,118 +1,116 @@
-# Credit-Card-Fraudulent-Detection
+# Credit Card Fraud Detection
 
-<br>
+Machine learning application for detecting fraudulent credit card transactions
 
-### Mustafa Tayyip BAYRAM   
-### Furkan ÖCALAN  
+## 📋 Overview
 
-<br>
+A web-based fraud detection system using logistic regression to analyze credit card transactions and identify potentially fraudulent activity in real-time.
 
-![image](https://user-images.githubusercontent.com/60510780/188311216-8c1e087d-ebac-4565-9d8d-87189d327ab3.png)
+**Developed by:**
+- Mustafa Tayyip BAYRAM - [LinkedIn](https://www.linkedin.com/in/mutabay/)
+- Furkan ÖCALAN - [LinkedIn](https://www.linkedin.com/in/furkan-ocalan-16186a174/)
 
-<hr>
+![System Overview](https://user-images.githubusercontent.com/60510780/188311216-8c1e087d-ebac-4565-9d8d-87189d327ab3.png)
 
+## 📂 Structure
 
+- **[Analyze/](Analyze/)** - Core analysis engine and model
+- **[Documents/](Documents/)** - Project reports and system diagrams
+- **[apps/](apps/)** - Flask application modules
+- **[uploads/](uploads/)** - Transaction file uploads
+- **[ANALYSIS.ipynb](ANALYSIS.ipynb)** - Model training notebook
+- **[fraud_test.txt](fraud_test.txt)** / **[non_fraud_test.txt](non_fraud_test.txt)** - Test datasets
 
-## Specification about what we used and achieved.
+## 🔬 Technical Implementation
 
-***************
-### Data
+### Dataset
+- **Source**: [Kaggle Credit Card Fraud Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- **Type**: Credit card transaction records
 
-- [creditcard.csv](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+### Model Architecture
+- **Algorithm**: Logistic Regression
+- **Performance Metrics**:
+  - Accuracy: 97.6%
+  - Recall: 89.6%
 
-***************
+### Web Application Stack
 
-### Model Training
+| Component | Technology |
+|-----------|------------|
+| Backend Framework | Flask |
+| Database | MySQL |
+| Template System | Blueprint |
 
-- Architecture
-    - Logistic Regression
+### Application Modules
 
-- Inference Results
-    - Accuracy: 0.976
-    - Recall: 0.896
+- **Authentication**: User registration and login system
+- **File Upload**: Transaction data file processing
+- **Analysis Engine**: Real-time fraud detection
+- **Dashboard**: Results visualization and reporting
+- **Config**: Database configuration management
 
-****************
+## 🚀 Installation & Setup
 
-### Application  
-
-| Idx | Tool-Framework |
-| ------ | ------ |
-| Web | Flask |
-| DBMS | MySQL |
-| Template Management | Blueprint |
-
-- Authentication
-    - Login-register implementations.
-- File
-    - Processes from file uploading to analyze.
-- Home
-    - Processes from analyze to end of the application.
-- Templates
-    - Files required for rendering purpose.
-- config
-    - Database connection credentials.
-
-***************
-### Helper Tools 
-
-| Idx | Tool-Framework |
-| ------ | ------ |
-| VCS | Github |
-| Scrum Tool | Trello |
-| Model Training | Google Collab & CUDA |
-
-***************
-### Project Reports
-
-Under the Documents folder, report and diagrams are accessible.
-
-***************
-
-Notebooks used to train the model for this application can be found [here](ANALYSIS.ipynb).
-
-<hr>
-
-## Steps followed to setup the project
-
-1. Initialise the application by downloading dependencies  by entering the following command in terminal, after getting into the project directory:
-
-```(bash)
+### 1. Install Dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-2. Get the model and put it Analyze/Models directory. [You can get it from notebook or contact us.]
-3. Change database credentials according to your database. [apps/config.py line:13]
-4. Start the application
-```(bash)
-$env:FLASK_ENV="development"    # [Use it only during the development stage.]
-$env:FLASK_DEBUG=1              # [Use it only during the development stage.]
-$env:FLASK_APP = ".\run.py"
+### 2. Model Setup
+Download the trained model and place it in `Analyze/Models/` directory.  
+*Model available in [ANALYSIS.ipynb](ANALYSIS.ipynb) or contact developers.*
+
+### 3. Database Configuration
+Update database credentials in `apps/config.py` (line 13)
+
+### 4. Run Application
+```bash
+# Development mode
+$env:FLASK_ENV="development"
+$env:FLASK_DEBUG=1
+$env:FLASK_APP=".\run.py"
 flask run
 ```
 
-<hr>
+## 📊 Application Screenshots
 
-<br>
+![Login Interface](https://user-images.githubusercontent.com/60510780/188311541-23073f97-e9c9-4f7f-a28f-23acbd4339b5.png)
+![Dashboard](https://user-images.githubusercontent.com/60510780/188311560-3c72ad33-4ae6-4e6c-870d-03de13064e36.png)
+![File Upload](https://user-images.githubusercontent.com/60510780/188311568-353600cc-3012-417d-a17a-8f291257a5a2.png)
+![Analysis Results](https://user-images.githubusercontent.com/60510780/188311580-a7861455-d42e-4998-bdbd-dd27b7ae3cd7.png)
+![Transaction Details](https://user-images.githubusercontent.com/60510780/188311589-5c002eea-6c80-4030-849e-c60c3c11a41d.png)
+![Statistics View](https://user-images.githubusercontent.com/60510780/188311596-660bcf09-2533-4091-ade4-40020cd64bad.png)
+![Detection Report](https://user-images.githubusercontent.com/60510780/188311599-f0c45358-5cd7-40d2-b862-8769031a3cad.png)
 
- 
-## Screenshots of the application
+## 🛠️ Development Tools
 
-![image](https://user-images.githubusercontent.com/60510780/188311541-23073f97-e9c9-4f7f-a28f-23acbd4339b5.png)
-![image](https://user-images.githubusercontent.com/60510780/188311560-3c72ad33-4ae6-4e6c-870d-03de13064e36.png)
-![image](https://user-images.githubusercontent.com/60510780/188311568-353600cc-3012-417d-a17a-8f291257a5a2.png)
-![image](https://user-images.githubusercontent.com/60510780/188311580-a7861455-d42e-4998-bdbd-dd27b7ae3cd7.png)
-![image](https://user-images.githubusercontent.com/60510780/188311589-5c002eea-6c80-4030-849e-c60c3c11a41d.png)
-![image](https://user-images.githubusercontent.com/60510780/188311596-660bcf09-2533-4091-ade4-40020cd64bad.png)
-![image](https://user-images.githubusercontent.com/60510780/188311599-f0c45358-5cd7-40d2-b862-8769031a3cad.png)
+| Purpose | Tool |
+|---------|------|
+| Version Control | GitHub |
+| Project Management | Trello |
+| Model Training | Google Colab with CUDA |
 
-<hr>
+## ✨ Features
 
+- Real-time fraud detection
+- Batch transaction processing
+- User authentication system
+- Interactive dashboard
+- High accuracy classification
+- File-based data import
+- Detailed analysis reports
 
-To Contact Us::
-- Mustafa Tayyip BAYRAM
-    - [LinkedIn](https://www.linkedin.com/in/mutabay/)
-- Furkan ÖCALAN
-    - [LinkedIn](https://www.linkedin.com/in/furkan-ocalan-16186a174/)
+## 📖 Documentation
 
+Complete project reports and system diagrams are available in the [Documents](Documents/) folder.
 
+## 🎯 Use Cases
 
+- Credit card transaction monitoring
+- Fraud pattern identification
+- Risk assessment for financial institutions
+- Real-time transaction validation
+
+---
+
+*Machine learning application for financial fraud detection*
